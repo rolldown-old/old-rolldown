@@ -42,7 +42,6 @@
     "mukla": "^0.4.8",
     "nyc": "^10.0.0",
     "rollup-plugin-buble": "^0.15.0",
-    "rollup-watch": "^3.1.0",
     "standard": "^8.6.0",
     "standard-version": "^4.0.0"
   },
