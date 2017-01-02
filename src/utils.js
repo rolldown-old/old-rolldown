@@ -1,5 +1,3 @@
-'use strict'
-
 import extend from 'extend-shallow'
 import loadPkg from 'load-pkg'
 
