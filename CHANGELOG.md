@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/rolldown/rolldown/compare/v0.1.2...v0.1.3) (2017-01-02)
+
+
+### Bug Fixes
+
+* **index.js:** cleanup ([f948eb7](https://github.com/rolldown/rolldown/commit/f948eb7))
+* **onwarn:** mute options.onwarn hook by default ([2050eef](https://github.com/rolldown/rolldown/commit/2050eef))
+* **options:** allow passing options.onwrite function ([af50c61](https://github.com/rolldown/rolldown/commit/af50c61))
+* **options:** always append plugin for hooks ([36b1ab7](https://github.com/rolldown/rolldown/commit/36b1ab7))
+* **package:** remove big "load-pkg" dependency ([25aa9dd](https://github.com/rolldown/rolldown/commit/25aa9dd))
+* **rollup:** suppress onwarn ([968eda3](https://github.com/rolldown/rolldown/commit/968eda3))
+* **utils:** fix failing to require plugins ([e1a5956](https://github.com/rolldown/rolldown/commit/e1a5956))
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/rolldown/rolldown/compare/v0.1.1...v0.1.2) (2017-01-02)
 
