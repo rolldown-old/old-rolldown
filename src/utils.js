@@ -21,9 +21,6 @@ const getDefaults = (options, pkg) => {
   options.onwarn = typeof options.onwarn === 'function'
     ? options.onwarn
     : (er) => {}
-  options.onwrite = typeof options.onwrite === 'function'
-    ? options.onwrite
-    : (opts) => {}
 
   // smart resolving for plugins
   options.plugins = arrayify(options.plugins).map((plugin) => {
@@ -40,7 +37,26 @@ const getDefaults = (options, pkg) => {
     return plugin
   })
 
-  return options
+  // plugin for `ongenerate` and `onwrite` hooks
+  options.plugins.push({
+    name: 'rolldown-hooks',
+    onwrite: (opts) => (
+      typeof options.onwrite === 'function' && options.onwrite(opts)
+    ),
+    ongenerate: (opts) => (
+      typeof options.ongenerate === 'function' && options.ongenerate(opts)
+    )
+  })
+
+  // prevent rollup from throwing
+  // if unknown options is passed
+  // such as `options.ongenerate`
+  // and `options.onwrite`
+  const opts = extend({}, options)
+  delete opts['ongenerate']
+  delete opts['onwrite']
+
+  return opts
 }
 
 export default {
