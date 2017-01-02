@@ -1,16 +1,18 @@
 import test from 'mukla'
 import rolldown from './index'
-import path from 'path'
 
-test('rolldown', () => {
-  const entry = path.resolve(__dirname, '..', 'src', 'index.js')
-  return rolldown({
-    entry: entry,
+test('rolldown', (done) => {
+  rolldown({
+    source: `export default (foo) => Promise.resolve(foo)`,
     ongenerate: (opts) => {
-      console.log('on generate')
-    }
-    // dest: 'foo.js'
+      // console.log('on generate')
+    },
+    format: 'cjs',
+    plugins: [['buble', { target: { node: '0.12' } }]]
   }).then((result) => {
-    console.log('done')
-  })
+    test.strictEqual(/function/.test(result.code), true)
+    test.strictEqual(/module/.test(result.code), true)
+    test.strictEqual(/exports/.test(result.code), true)
+    done()
+  }, done).catch(done)
 })

@@ -1,12 +1,22 @@
 import extend from 'extend-shallow'
 import path from 'path'
 import fs from 'fs'
+import uuid from 'uuid'
+import { tmpdir } from 'os'
 
 const arrayify = (val) => {
   if (!val) return []
   if (Array.isArray(val)) return val
   return [val]
 }
+
+const tempfile = (contents) => new Promise((resolve, reject) => {
+  const tmpfile = path.join(tmpdir(), uuid.v4() + '.js')
+  fs.writeFile(tmpfile, contents, (err) => {
+    if (err) return reject(err)
+    resolve(tmpfile)
+  })
+})
 
 const loadPackage = () => new Promise((resolve, reject) => {
   const fp = path.join(process.cwd(), 'package.json')
@@ -65,5 +75,6 @@ export default {
   extend,
   arrayify,
   getDefaults,
-  loadPackage
+  loadPackage,
+  tempfile
 }
