@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "extend-shallow": "^2.0.1",
-    "load-pkg": "^3.0.1",
     "rollup": "^0.39.2"
   },
   "devDependencies": {

@@ -1,5 +1,6 @@
 import extend from 'extend-shallow'
-import loadPkg from 'load-pkg'
+import path from 'path'
+import fs from 'fs'
 
 const arrayify = (val) => {
   if (!val) return []
@@ -8,9 +9,10 @@ const arrayify = (val) => {
 }
 
 const loadPackage = () => new Promise((resolve, reject) => {
-  loadPkg((err, pkg) => {
+  const fp = path.join(process.cwd(), 'package.json')
+  fs.readFile(fp, 'utf-8', (err, res) => {
     if (err) return reject(err)
-    resolve(pkg)
+    resolve(JSON.parse(res))
   })
 })
 
