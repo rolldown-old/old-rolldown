@@ -22,15 +22,16 @@ const getDefaults = (options, pkg) => {
   // smart resolving for plugins
   options.plugins = arrayify(options.plugins).map((plugin) => {
     if (typeof plugin === 'string') {
-      return require(plugin)()
+      return require('rollup-plugin-' + plugin)()
     }
     if (Array.isArray(plugin)) {
       const fn = typeof plugin[0] === 'function'
         ? plugin[0]
-        : require(plugin[0])
+        : require('rollup-plugin-' + plugin[0])
 
       return fn(plugin[1])
     }
+    return plugin
   })
 
   return options
