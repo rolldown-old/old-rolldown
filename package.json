@@ -1,6 +1,6 @@
 {
   "name": "rolldown",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Thin layer on top of [rollup][] api to allow loading configs from package.json file",
   "repository": "rolldown/rolldown",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://i.am.charlike.online)",
