@@ -1,7 +1,7 @@
 {
   "name": "rolldown",
   "version": "0.2.0",
-  "description": "Thin layer on top of [rollup][] api to allow loading configs from package.json file",
+  "description": "Modern bundler built on [rollup][] with support for presets and better configuration experience",
   "repository": "rolldown/rolldown",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://i.am.charlike.online)",
   "precommit.silent": true,
