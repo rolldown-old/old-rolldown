@@ -21,7 +21,7 @@
     "precommit": "npm run build",
     "commit": "git add --all",
     "postcommit": "git-cz",
-    "prepush": "npm test",
+    "prerelease": "npm test",
     "release": "standard-version --sign --no-verify",
     "ci": "nyc report --reporter=text-lcov | coveralls"
   },
