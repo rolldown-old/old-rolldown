@@ -42,7 +42,7 @@
     "standard-version": "^4.0.0"
   },
   "files": [
-    "lib"
+    "lib/"
   ],
   "keywords": [],
   "config": {
