@@ -15,5 +15,6 @@ export default {
     { dest: 'lib/index.es6.js', format: 'es' },
     { dest: 'lib/index.js', format: 'cjs' }
   ],
+  onwarn: () => {},
   plugins: [buble({ target: { node: '4' } })]
 }
