@@ -1,6 +1,6 @@
 {
   "name": "rolldown",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Thin layer on top of [rollup][] api to allow loading configs from package.json file",
   "repository": "rolldown/rolldown",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://i.am.charlike.online)",
@@ -13,19 +13,15 @@
     "lint": "standard src/**/* --verbose --fix",
     "prebuild": "npm run lint",
     "build": "rollup -c",
-
     "prebuild:test": "npm run lint",
     "build:test": "rollup -c rollup.config.test.js",
     "pretest": "npm run build:test",
     "test": "nyc node tmp/test",
     "posttest": "nyc check-coverage --lines 0 --branches 0 --statements 0 --functions 0",
-
     "precommit": "npm run build",
     "commit": "git add --all",
     "postcommit": "git-cz",
-
     "prepush": "npm test",
-
     "release": "standard-version --sign --no-verify"
   },
   "dependencies": {
