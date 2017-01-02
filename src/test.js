@@ -9,8 +9,8 @@
 
 'use strict'
 
-const test = require('mukla')
-const rolldown = require('./build')
+import test from 'mukla'
+import rolldown from './index'
 
 test('rolldown', () => {
   return rolldown().catch(() => {

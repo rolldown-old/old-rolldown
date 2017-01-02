@@ -1,13 +1,12 @@
 'use strict'
 
-var buble = require('rollup-plugin-buble')
+import buble from 'rollup-plugin-buble'
 
-module.exports = {
-  entry: 'index.js',
-  useStrict: true,
+export default {
+  entry: 'src/index.js',
   targets: [
-    { dest: 'build/index.es6.js', format: 'es' },
-    { dest: 'build/index.js', format: 'cjs' }
+    { dest: 'lib/index.es6.js', format: 'es' },
+    { dest: 'lib/index.js', format: 'cjs' }
   ],
   plugins: [buble({ target: { node: '4' } })]
 }
