@@ -6,12 +6,15 @@ const rolldown = (options) => utils.loadPackage().then((pkg) => {
 
   return r.rollup(options).then((bundle) => {
     if (options.dest) {
+      options.onwrite(options)
       return bundle.write(options)
     }
 
     if (options.targets) {
       return Promise.all(options.targets.map((target) => {
-        return bundle.write(utils.extend({}, options, target))
+        const opts = utils.extend({}, options, target)
+        options.onwrite(opts)
+        return bundle.write(opts)
       }))
     }
 
