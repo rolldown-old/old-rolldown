@@ -31,7 +31,7 @@
   "dependencies": {
     "extend-shallow": "^2.0.1",
     "rollup": "^0.39.2",
-    "uuid": "^3.0.1"
+    "tmp-file": "^2.0.1"
   },
   "devDependencies": {
     "chokidar-cli": "^1.2.0",

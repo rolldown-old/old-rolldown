@@ -30,9 +30,10 @@ const rolldown = (options) => utils.loadPackage().then((pkg) => {
   options = utils.getDefaults(options, pkg)
 
   if (typeof options.source === 'string' && !options.entry) {
-    return utils.tempfile(options.source).then((filepath) => {
-      options.entry = filepath
+    return utils.tmpFile(options.source).then((file) => {
+      options.entry = file.path
       delete options['source']
+
       return rollup(options)
     })
   }

@@ -11,7 +11,9 @@ test('rolldown', (done) => {
       called++
     },
     format: 'cjs',
-    plugins: [['buble', { target: { node: '0.12' } }]]
+    plugins: [
+      ['buble', { target: { node: '0.12' } }]
+    ]
   }).then((result) => {
     test.strictEqual(/function/.test(result.code), true)
     test.strictEqual(/module/.test(result.code), true)
