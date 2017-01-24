@@ -20,7 +20,7 @@ const loadPackage = () => new Promise((resolve, reject) => {
 const getDefaults = (options, pkg) => {
   options = extend({}, pkg.rollup, options)
   options = pkg.rollupConfig ? extend(options, pkg.rollupConfig) : options
-  options = pkg.config.rollup ? extend(options, pkg.config.rollup) : options
+  options = pkg.config && pkg.config.rollup ? extend(options, pkg.config.rollup) : options
   options.onwarn = typeof options.onwarn === 'function'
     ? options.onwarn
     : (er) => {}
