@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "extend-shallow": "^2.0.1",
-    "rollup": "^0.39.2",
+    "rollup": "*",
     "tmp-file": "^2.0.1"
   },
   "devDependencies": {
