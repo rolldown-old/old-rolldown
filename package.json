@@ -1,6 +1,6 @@
 {
   "name": "rolldown",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Modern bundler built on [rollup][] with support for presets and better configuration experience",
   "repository": "rolldown/rolldown",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://i.am.charlike.online)",

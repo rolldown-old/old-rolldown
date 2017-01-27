@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.4"></a>
+## [0.2.4](https://github.com/rolldown/rolldown/compare/v0.2.3...v0.2.4) (2017-01-27)
+
+
+### Bug Fixes
+
+* **options:** problem with lack of 'config' field in pkg ([f5edbab](https://github.com/rolldown/rolldown/commit/f5edbab)), closes [#3](https://github.com/rolldown/rolldown/issues/3)
+* **package:** force use wildcard for rollup ([d64eaff](https://github.com/rolldown/rolldown/commit/d64eaff))
+
+
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/rolldown/rolldown/compare/v0.2.2...v0.2.3) (2017-01-03)
 
